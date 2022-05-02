@@ -1,0 +1,157 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+}
+.main-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.form-search {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.search-bar {
+  margin: 0 auto;
+}
+
+.button-search {
+  background-color: #fabe03;
+  color: black;
+  border: thin solid #fabe03;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.3);
+  padding: 8px 25px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  bottom: 2px;
+  right: 10px;
+  transition: all 100ms ease-in-out;
+}
+
+.button-search:hover {
+  background: #fabe03;
+  border: thin solid #fabe03;
+  position: relative;
+  top: 1px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.4);
+}
+
+.current-location-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.button-current-location {
+  background: white;
+  font-size: 12px;
+  border: thin solid rgb(228, 227, 227);
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+  margin: 8px 0;
+  padding: 5px 15px;
+  position: relative;
+  left: 12px;
+  transition: all 100ms ease-in-out;
+}
+
+.button-current-location:hover {
+  position: relative;
+  top: 2px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.3);
+}
+
+.current {
+  margin: 50px 20px;
+  text-align: center;
+  background: #d5edf1;
+  padding: 60px 30px;
+  border-radius: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.city-name {
+  font-weight: 700;
+  font-size: 44px;
+  display: block;
+}
+
+h2 {
+  font-size: 90px;
+  margin-top: 20px;
+  position: relative;
+  left: 45px;
+}
+
+#temperature-links {
+  font-size: 22px;
+  position: relative;
+  bottom: 45px;
+  right: 15px;
+}
+
+#fahrenheit-link,
+#celsius-link {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+}
+
+#fahrenheit-link:hover,
+#celsius-link:hover {
+  border-bottom: medium solid #f59a1c;
+}
+
+.current-condition {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.current-condition-text {
+  font-size: 20px;
+}
+
+.expect-text {
+  font-size: 16px;
+  margin-top: 80px;
+  width: 100%;
+  border-top: 5px solid #f59a1c;
+  padding-top: 10px;
+}
+
+.row-card {
+  margin-top: 50px;
+}
+
+.card-column {
+  margin-top: 40px;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.card-body {
+  max-width: 300px;
+}
+
+.card-temp {
+  font-size: 38px;
+}
+
+.card-image {
+  max-width: 100px;
+}
+
+.card-text {
+  margin: 10px;
+}
