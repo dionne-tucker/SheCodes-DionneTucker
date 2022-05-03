@@ -155,3 +155,10 @@ h2 {
 .card-text {
   margin: 10px;
 }
+
+.open-source-link {
+  font-size: 13px;
+  padding: 60px 0 20px;
+  margin: 0 auto;
+  text-align: center;
+}
