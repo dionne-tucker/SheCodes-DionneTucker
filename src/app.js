@@ -141,6 +141,8 @@ function showCurrentTemperature(response) {
   let cityHumidity = response.data.main.humidity;
   let cityIcon = response.data.weather[0].icon;
 
+  fahrenheitTemperature = response.data.main.temp;
+
   let city = document.querySelector(".city-name");
   city.innerHTML = currentCity;
 
