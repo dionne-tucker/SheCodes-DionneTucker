@@ -9,6 +9,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+let date = now.getDate();
+
 let days = [
   "Sunday",
   "Monday",
@@ -20,8 +22,26 @@ let days = [
 ];
 let day = days[now.getDay()];
 
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+let month = months[now.getMonth()];
+
 let currentDate = document.querySelector(".current-date");
-currentDate.innerHTML = `${day} ${hours}:${minutes}`;
+currentDate.innerHTML =
+  `${day} | ${month} ${date} | ${hours}:${minutes}`.toUpperCase();
 
 //Display current city
 
@@ -29,7 +49,7 @@ function displayCity(event) {
   event.preventDefault();
   let input = document.querySelector("#input-city");
   let cityName = document.querySelector(".city-name");
-  cityName.innerHTML = input.value;
+  cityName.innerHTML = input.value.toUpperCase();
   let city = input.value;
   searchCityName(city);
 }
@@ -38,36 +58,57 @@ let form = document.querySelector(".form-search");
 form.addEventListener("submit", displayCity);
 
 //Switch between fahrenheit and celsius temperatures
-/*
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 45;
-}
 
 function showCelsius(event) {
   event.preventDefault();
+  let celsiusTemperature = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 15;
+  temperature.innerHTML = celsiusTemperature;
+  fahrenheit.classList.remove("active-link");
+  celsius.classList.add("active-link");
 }
 
-let fahrenheit = document.querySelector("#fahrenheit-link");
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  fahrenheit.classList.add("active-link");
+  celsius.classList.remove("active-link");
+}
+
+let fahrenheitTemperature = null;
+
+let celsius = document.querySelector(".celsius-link");
+celsius.addEventListener("click", showCelsius);
+
+let fahrenheit = document.querySelector(".fahrenheit-link");
 fahrenheit.addEventListener("click", showFahrenheit);
 
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", showCelsius);
-*/
 //Display temperature of a city
 
 function showTemperature(response) {
   let cityTemp = Math.round(response.data.main.temp);
   let cityDescription = response.data.weather[0].main;
+  let cityWind = Math.round(response.data.wind.speed);
+  let cityHumidity = response.data.main.humidity;
+  let cityIcon = response.data.weather[0].icon;
+
+  fahrenheitTemperature = response.data.main.temp;
 
   let degrees = document.querySelector("#temperature");
   degrees.innerHTML = cityTemp;
 
   let description = document.querySelector(".current-condition-text");
   description.innerHTML = cityDescription;
+
+  let wind = document.querySelector(".current-wind");
+  wind.innerHTML = `${cityWind} m/h`;
+
+  let humidity = document.querySelector(".current-humidity");
+  humidity.innerHTML = `${cityHumidity}%`;
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `images/${cityIcon}.png`);
 }
 
 function searchCityName(city) {
@@ -96,6 +137,9 @@ function showCurrentTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
   let currentCity = response.data.name;
   let currentDescription = response.data.weather[0].main;
+  let cityWind = Math.round(response.data.wind.speed);
+  let cityHumidity = response.data.main.humidity;
+  let cityIcon = response.data.weather[0].icon;
 
   let city = document.querySelector(".city-name");
   city.innerHTML = currentCity;
@@ -105,6 +149,15 @@ function showCurrentTemperature(response) {
 
   let description = document.querySelector(".current-condition-text");
   description.innerHTML = currentDescription;
+
+  let wind = document.querySelector(".current-wind");
+  wind.innerHTML = `${cityWind} m/h`;
+
+  let humidity = document.querySelector(".current-humidity");
+  humidity.innerHTML = `${cityHumidity}%`;
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `images/${cityIcon}.png`);
 }
 
 let currentButton = document.querySelector(".button-current-location");

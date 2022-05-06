@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 20px;
+  color: black;
 }
 .main-wrapper {
   max-width: 1000px;
@@ -9,113 +10,141 @@ body {
 
 .form-search {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
+  position: relative;
+  left: 20px;
 }
 
 .search-bar {
   margin: 0 auto;
+  max-width: 300px;
 }
 
-.button-search {
-  background-color: #fabe03;
-  color: black;
-  border: thin solid #fabe03;
-  border-radius: 50px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.3);
-  padding: 8px 25px;
-  display: block;
-  margin: 0 auto;
+.search-icon {
   position: relative;
-  bottom: 2px;
-  right: 10px;
-  transition: all 100ms ease-in-out;
+  right: 84px;
+  top: 2px;
+  font-size: 20px;
+  color: #02758f;
+  transition: all 150ms ease-in-out;
 }
 
-.button-search:hover {
-  background: #fabe03;
-  border: thin solid #fabe03;
-  position: relative;
-  top: 1px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.4);
-}
-
-.current-location-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
+.search-icon:hover {
+  color: #f59a1c;
 }
 
 .button-current-location {
   background: white;
   font-size: 12px;
   border: thin solid rgb(228, 227, 227);
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
-  margin: 8px 0;
+  border-radius: 30px;
+  box-shadow: 0 1px 5px rgb(0, 0, 0, 0.2);
+  display: block;
+  margin: 15px auto;
   padding: 5px 15px;
-  position: relative;
-  left: 12px;
-  transition: all 100ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 
 .button-current-location:hover {
-  position: relative;
-  top: 2px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.3);
+  background-color: #f59a1c;
+  color: white;
 }
 
 .current {
-  margin: 50px 20px;
+  margin: 30px 20px;
   text-align: center;
-  background: #d5edf1;
+  background: linear-gradient(white, #f3e1ab, #c8ebf2);
   padding: 60px 30px;
   border-radius: 20px;
-}
-
-h1 {
-  font-size: 28px;
-  line-height: 1.5;
-  margin-top: 10px;
+  color: rgb(95, 95, 95);
 }
 
 .city-name {
-  font-weight: 700;
-  font-size: 44px;
+  font-weight: 500;
+  color: rgb(42, 42, 42);
+  font-size: 24px;
+  text-transform: uppercase;
   display: block;
+  letter-spacing: 2px;
 }
 
-h2 {
-  font-size: 90px;
-  margin-top: 20px;
+.current-date {
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: rgb(132, 130, 130);
+}
+
+.current-temp-container {
+  font-size: 100px;
+  font-weight: 500;
+  margin: 20px auto 0;
+  max-width: 200px;
+  color: rgb(42, 42, 42);
   position: relative;
-  left: 45px;
 }
 
-#temperature-links {
-  font-size: 22px;
-  position: relative;
-  bottom: 45px;
-  right: 15px;
-}
-
-#fahrenheit-link,
-#celsius-link {
+.fahrenheit-link,
+.celsius-link {
+  font-size: 18px;
+  font-weight: 300;
+  position: absolute;
+  left: 185px;
   text-decoration: none;
-  color: black;
-  font-size: 22px;
+  color: rgb(132, 130, 130);
+  transition: all 150ms ease-in-out;
 }
 
-#fahrenheit-link:hover,
-#celsius-link:hover {
-  border-bottom: medium solid #f59a1c;
+.fahrenheit-link:hover,
+.celsius-link:hover {
+  font-size: 22px;
+  color: black;
+}
+
+.fahrenheit-link {
+  top: 30px;
+}
+
+.celsius-link {
+  top: 60px;
+}
+
+.active-link {
+  font-weight: 600;
+  font-size: 22px;
+  color: black;
+  cursor: default;
+  transition: all 150ms ease-in-out;
+}
+
+.active-link:hover {
+  color: black;
+}
+
+.extra-details {
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 14px;
+}
+
+.current-wind-icon,
+.current-humidity-icon {
+  color: #02758f;
+  font-size: 24px;
 }
 
 .current-condition {
-  max-width: 50%;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+
+.current-image {
+  max-width: 150px;
 }
 
 .current-condition-text {
-  font-size: 20px;
+  font-size: 14px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .expect-text {
@@ -158,7 +187,16 @@ h2 {
 
 .open-source-link {
   font-size: 13px;
-  padding: 60px 0 20px;
   margin: 0 auto;
   text-align: center;
+}
+
+.open-source-link a {
+  text-decoration: none;
+  color: #02758f;
+  transition: all 150ms ease-in-out;
+}
+
+.open-source-link a:hover {
+  color: #f59a1c;
 }

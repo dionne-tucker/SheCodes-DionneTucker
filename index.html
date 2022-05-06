@@ -19,13 +19,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/45bd6b7748.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Wk2 Homework</title>
   </head>
   <body>
     <div class="container main-wrapper">
       <form class="row form-search">
-        <div class="col-9">
+        <div class="col-11">
           <input
             type="text"
             class="form-control search-bar"
@@ -34,32 +35,39 @@
             id="input-city"
           />
         </div>
-        <div class="col-3">
-          <button type="submit" class="btn btn-light button-search">
-            Search
+        <div class="col-1">
+          <button type="submit" class="btn btn-link button-search">
+            <i class="fa-regular fa-magnifying-glass search-icon"></i>
           </button>
         </div>
       </form>
-      <div class="current-location-wrapper">
-        <button class="button-current-location">Your Current Location</button>
+      <div>
+        <button class="button-current-location">Your Current Location 📍</button>
       </div>
       <div class="current">
+        <span class="city-name">New York</span>
         <span class="current-date"></span>
-        <h1>
-          The current temperature in <span class="city-name">New York</span> is
-        </h1>
-        <h2>
+        <div class = "current-temp-container">
           <span id="temperature">45</span>
-          <span id="temperature-links">
-            <a href="#" id="fahrenheit-link">°F </a>|
-            <a href="#" id="celsius-link">°C</a>
-          </span>
-        </h2>
-        <h3 class="row current-condition">
-          <img class="col" src="images/partly-cloudy.png" alt="partly-cloudy" />
-          <span class="col current-condition-text">Partly Cloudy</span>
-        </h3>
+          <a href="#" class = "active-link fahrenheit-link">°F</a>
+          <a href="#" class="celsius-link">°C</a>
+        </div>
+        <div class="row extra-details">
+          <div class="col">
+            <i class="fa-regular fa-wind current-wind-icon"></i>
+            <div class="current-wind">15 m/h</div>
+          </div>
+          <div class="col">
+            <i class="fa-regular fa-droplet current-humidity-icon"></i>
+            <div class="current-humidity">30%</div>
+          </div>
+        </div>
+        <div class="current-condition">
+          <img class="current-image" id="icon" src="images/02d.png" alt="few clouds" />
+          <span class="current-condition-text">Few Clouds</span>
+        </div>
       </div>
+      <!--
       <div class="expect-text">In the next 5 days</div>
       <div class="row row-card">
         <div class="col-sm card-column">
@@ -159,9 +167,10 @@
         </div>
       </div>
     </div>
+    -->
     <div class="open-source-link">
       <a href="https://github.com/dionne-tucker/SheCodes-DionneTucker"
-        >Open Source Code</a
+        >open source code</a
       >
       by Dionne Tucker
     </div>
