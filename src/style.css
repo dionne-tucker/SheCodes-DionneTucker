@@ -51,10 +51,10 @@ body {
 }
 
 .current {
-  margin: 30px 20px;
+  margin: 30px 20px 10px;
   text-align: center;
   background: linear-gradient(white, #f3e1ab, #c8ebf2);
-  padding: 60px 30px;
+  padding: 60px 30px 50px;
   border-radius: 20px;
   color: rgb(95, 95, 95);
 }
@@ -121,7 +121,7 @@ body {
 }
 
 .extra-details {
-  margin: 0 auto;
+  margin: 25px auto 0;
   max-width: 600px;
   font-size: 14px;
 }
@@ -132,12 +132,8 @@ body {
   font-size: 24px;
 }
 
-.current-condition {
-  margin: 10px auto;
-}
-
-.current-image {
-  max-width: 150px;
+.current-condition-text-wrapper {
+  margin-top: -20px;
 }
 
 .current-condition-text {
@@ -145,6 +141,14 @@ body {
   display: block;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.current-image-wrapper {
+  margin: 0 auto;
+}
+
+.current-image {
+  max-width: 200px;
 }
 
 .expect-text {
