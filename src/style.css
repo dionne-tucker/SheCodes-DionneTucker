@@ -53,7 +53,7 @@ body {
 .current {
   margin: 30px 20px 10px;
   text-align: center;
-  background: linear-gradient(white, #f3e1ab, #c8ebf2);
+  background: linear-gradient(white, #f3e1ab, #8eccd8);
   padding: 60px 30px 50px;
   border-radius: 20px;
   color: rgb(95, 95, 95);
