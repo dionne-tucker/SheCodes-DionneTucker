@@ -43,24 +43,50 @@ let currentDate = document.querySelector(".current-date");
 currentDate.innerHTML =
   `${day} | ${month} ${date} | ${hours}:${minutes}`.toUpperCase();
 
+//Format day in the forecast
+
+function formatDay(timestamp) {
+  let futureDate = new Date(timestamp * 1000);
+  let day = futureDate.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 //Display forecast
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row">`;
-  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col card-column">
-              <h5 class="card-title">${day}</h5>
+              <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
               <div class="card border-0 h-100">
                 <div class="text-center">
-                  <span class="card-temp">48°</span>
+                <span class="card-temp">${Math.round(
+                  forecastDay.temp.max
+                )}°</span>
+                <span>/</span>
+                <span class="card-temp">${Math.round(
+                  forecastDay.temp.min
+                )}°<span>
                   <div>
                     <img
-                      src="images/04d.png"
+                      src="images/${forecastDay.weather[0].icon}.png"
                       class="card-img-top card-image"
                       alt="..."
                     />
@@ -68,6 +94,7 @@ function displayForecast(response) {
                 </div>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

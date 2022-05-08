@@ -165,23 +165,24 @@ body {
 
 .card {
   background: rgb(255, 255, 255, 0.4);
-  max-height: 150px;
+  max-height: 140px;
   min-width: 125px;
-  margin: 15px 0 35px;
-  padding: 20px 8px;
+  margin: 15px 0 30px;
+  padding: 22px 8px;
   border-radius: 15px;
   box-shadow: 0 1px 8px rgb(57, 127, 142, 0.3);
 }
 
 .card-temp {
-  font-size: 30px;
+  font-size: 16px;
   color: rgb(42, 42, 42);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .card-image {
   max-width: 70px;
   opacity: 0.8;
+  margin-top: 10px;
 }
 
 .open-source-link {
