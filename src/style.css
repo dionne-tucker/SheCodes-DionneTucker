@@ -4,7 +4,7 @@ body {
   color: black;
 }
 .main-wrapper {
-  max-width: 1000px;
+  max-width: 580px;
   margin: 10px auto;
 }
 
@@ -53,7 +53,7 @@ body {
 .current {
   text-align: center;
   background: linear-gradient(white, #f3e1ab, #8eccd8, #77bbc9);
-  padding: 40px 30px 0;
+  padding: 30px 24px 0;
   border-radius: 20px;
   color: rgb(95, 95, 95);
 }
@@ -153,35 +153,41 @@ body {
 
 .line-break {
   border-top: thin solid #178aa5;
-  margin: 25px 0 40px;
+  margin-bottom: 20px;
 }
 
 .card-title {
   text-transform: uppercase;
-  font-size: 14px;
+  text-align: center;
+  width: 96px;
+  font-size: 12px;
   letter-spacing: 1px;
   font-weight: 400;
 }
 
 .card {
   background: rgb(255, 255, 255, 0.4);
-  max-height: 140px;
-  min-width: 125px;
-  margin: 15px 0 30px;
+  max-height: 130px;
+  width: 94px;
+  margin: 15px 0 24px;
   padding: 22px 8px;
   border-radius: 15px;
   box-shadow: 0 1px 8px rgb(57, 127, 142, 0.3);
 }
 
-.card-temp {
+.card-content {
   font-size: 16px;
   color: rgb(42, 42, 42);
   font-weight: 400;
 }
 
+.card-temp-min {
+  color: rgb(136, 136, 136);
+}
+
 .card-image {
-  max-width: 70px;
-  opacity: 0.8;
+  max-width: 60px;
+  opacity: 0.7;
   margin-top: 10px;
 }
 
