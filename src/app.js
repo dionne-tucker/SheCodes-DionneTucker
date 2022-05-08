@@ -43,6 +43,36 @@ let currentDate = document.querySelector(".current-date");
 currentDate.innerHTML =
   `${day} | ${month} ${date} | ${hours}:${minutes}`.toUpperCase();
 
+//Display forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col card-column">
+              <h5 class="card-title">${day}</h5>
+              <div class="card border-0 h-100">
+                <div class="text-center">
+                  <span class="card-temp">48°</span>
+                  <div>
+                    <img
+                      src="images/04d.png"
+                      class="card-img-top card-image"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Display current city
 
 function displayCity(event) {
@@ -141,8 +171,6 @@ function showCurrentTemperature(response) {
   let cityHumidity = response.data.main.humidity;
   let cityIcon = response.data.weather[0].icon;
 
-  fahrenheitTemperature = response.data.main.temp;
-
   let city = document.querySelector(".city-name");
   city.innerHTML = currentCity;
 
@@ -164,3 +192,5 @@ function showCurrentTemperature(response) {
 
 let currentButton = document.querySelector(".button-current-location");
 currentButton.addEventListener("click", currentPosition);
+
+displayForecast();
