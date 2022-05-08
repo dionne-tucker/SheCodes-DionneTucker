@@ -1,8 +1,22 @@
 //Display current time
 
 let now = new Date();
-
 let hours = now.getHours();
+
+let amOrPm = "";
+if (hours >= 12) {
+  amOrPm = "PM";
+} else {
+  amOrPm = "AM";
+}
+
+if (hours > 0 && hours <= 12) {
+  hours = hours;
+} else if (hours > 12) {
+  hours = hours - 12;
+} else if (hours == 0) {
+  hours = "12";
+}
 
 let minutes = now.getMinutes();
 if (minutes < 10) {
@@ -41,7 +55,7 @@ let month = months[now.getMonth()];
 
 let currentDate = document.querySelector(".current-date");
 currentDate.innerHTML =
-  `${day} | ${month} ${date} | ${hours}:${minutes}`.toUpperCase();
+  `${day} | ${month} ${date} | ${hours}:${minutes}${amOrPm}`.toUpperCase();
 
 //Format day in the forecast
 
@@ -98,7 +112,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastElement);
 }
 
 //Display current city
@@ -145,8 +158,6 @@ fahrenheit.addEventListener("click", showFahrenheit);
 //Get coordinates of a city for forecast
 
 function getForecast(coordinates) {
-  console.log(coordinates);
-
   let apiKey = `a6fd60837a51500b42c27ddff0bfd417`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);

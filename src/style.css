@@ -4,7 +4,7 @@ body {
   color: black;
 }
 .main-wrapper {
-  max-width: 580px;
+  max-width: 560px;
   margin: 10px auto;
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .current-image {
-  max-width: 180px;
+  max-width: 160px;
   margin-top: -40px;
 }
 
@@ -159,7 +159,7 @@ body {
 .card-title {
   text-transform: uppercase;
   text-align: center;
-  width: 96px;
+  width: 90px;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: 400;
@@ -168,7 +168,7 @@ body {
 .card {
   background: rgb(255, 255, 255, 0.4);
   max-height: 130px;
-  width: 94px;
+  width: 90px;
   margin: 15px 0 24px;
   padding: 22px 8px;
   border-radius: 15px;
@@ -176,7 +176,7 @@ body {
 }
 
 .card-content {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(42, 42, 42);
   font-weight: 400;
 }
