@@ -76,7 +76,7 @@ body {
 .current-temp-container {
   font-size: 100px;
   font-weight: 500;
-  margin: 10px auto 0;
+  margin: 0 auto;
   max-width: 200px;
   color: rgb(42, 42, 42);
   position: relative;
@@ -131,7 +131,7 @@ body {
 }
 
 .extra-details {
-  margin: 10px auto 0;
+  margin: 0 auto;
   max-width: 600px;
   font-size: 14px;
 }
