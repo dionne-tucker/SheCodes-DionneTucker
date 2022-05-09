@@ -112,6 +112,8 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
+  showFahrenheit();
 }
 
 //Display current city
@@ -125,35 +127,24 @@ function displayCity(event) {
   searchCityName(city);
 }
 
-let form = document.querySelector(".form-search");
-form.addEventListener("submit", displayCity);
-
 //Switch between fahrenheit and celsius temperatures
 
 function showCelsius(event) {
   event.preventDefault();
+  fahrenheit.classList.remove("active-link");
+  celsius.classList.add("active-link");
   let celsiusTemperature = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = celsiusTemperature;
-  fahrenheit.classList.remove("active-link");
-  celsius.classList.add("active-link");
 }
 
 function showFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
   fahrenheit.classList.add("active-link");
   celsius.classList.remove("active-link");
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
 }
-
-let fahrenheitTemperature = null;
-
-let celsius = document.querySelector(".celsius-link");
-celsius.addEventListener("click", showCelsius);
-
-let fahrenheit = document.querySelector(".fahrenheit-link");
-fahrenheit.addEventListener("click", showFahrenheit);
 
 //Get coordinates of a city for forecast
 
@@ -167,16 +158,21 @@ function getForecast(coordinates) {
 //Display temperature of a city
 
 function showTemperature(response) {
-  let cityTemp = Math.round(response.data.main.temp);
+  fahrenheitTemperature = response.data.main.temp;
+
+  let fahrenheit = document.querySelector(".fahrenheit-link");
+  fahrenheit.classList.add("active-link");
+
+  let celsius = document.querySelector(".celsius-link");
+  celsius.classList.remove("active-link");
+
   let cityDescription = response.data.weather[0].main;
   let cityWind = Math.round(response.data.wind.speed);
   let cityHumidity = response.data.main.humidity;
   let cityIcon = response.data.weather[0].icon;
 
-  fahrenheitTemperature = response.data.main.temp;
-
   let degrees = document.querySelector("#temperature");
-  degrees.innerHTML = cityTemp;
+  degrees.innerHTML = Math.round(fahrenheitTemperature);
 
   let description = document.querySelector(".current-condition-text");
   description.innerHTML = cityDescription;
@@ -223,6 +219,12 @@ function showCurrentTemperature(response) {
   let cityHumidity = response.data.main.humidity;
   let cityIcon = response.data.weather[0].icon;
 
+  let fahrenheit = document.querySelector(".fahrenheit-link");
+  fahrenheit.classList.add("active-link");
+
+  let celsius = document.querySelector(".celsius-link");
+  celsius.classList.remove("active-link");
+
   let city = document.querySelector(".city-name");
   city.innerHTML = currentCity;
 
@@ -244,5 +246,16 @@ function showCurrentTemperature(response) {
 
 let currentButton = document.querySelector(".button-current-location");
 currentButton.addEventListener("click", currentPosition);
+
+let fahrenheitTemperature = null;
+
+let form = document.querySelector(".form-search");
+form.addEventListener("submit", displayCity);
+
+let celsius = document.querySelector(".celsius-link");
+celsius.addEventListener("click", showCelsius);
+
+let fahrenheit = document.querySelector(".fahrenheit-link");
+fahrenheit.addEventListener("click", showFahrenheit);
 
 searchCityName("Miami");
