@@ -136,7 +136,7 @@ body {
   font-size: 14px;
 }
 
-.current-wind-icon,
+#current-wind-icon,
 .current-humidity-icon {
   color: #02758f;
   font-size: 24px;
