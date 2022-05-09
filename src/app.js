@@ -242,6 +242,8 @@ function showCurrentTemperature(response) {
 
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `images/${cityIcon}.png`);
+
+  getForecast(response.data.coord);
 }
 
 let currentButton = document.querySelector(".button-current-location");
